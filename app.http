@@ -1,64 +1,53 @@
-GET http://localhost:3000/todos/?status=TO%20DO
-###
+POST http://localhost:3000/login/
+Content-Type: application/json
 
-GET http://localhost:3000/todos/?priority=HIGH
-###
-
-GET http://localhost:3000/todos/?priority=HIGH&status=IN%20PROGRESS
-###
-
-GET http://localhost:3000/todos/?search_q=Buy
-###
-
-GET http://localhost:3000/todos/?category=WORK&status=DONE
-###
-
-GET http://localhost:3000/todos/?category=HOME
-###
-
-GET http://localhost:3000/todos/?category=LEARNING&priority=HIGH
-###
-
-
-
-
-
-
-GET http://localhost:3000/todos/1/
+{
+  "username": "christopher_phillips",
+  "password": "christy@123"
+}
 ####
-
-
-GET http://localhost:3000/agenda/?date=2021-12-12
+GET http://localhost:3000/states/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNocmlzdG9waGVyX3BoaWxsaXBzIiwiaWF0IjoxNjg0MjMyMzUyfQ.N_FUQVpDjHCePSaWWRV8vA1Yi044m3KukcudD8Tikv0
 ###
-POST http://localhost:3000/todos/
+GET http://localhost:3000/states/8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNocmlzdG9waGVyX3BoaWxsaXBzIiwiaWF0IjoxNjg0MjE3MDM1fQ.Yr7jnyaqfBLPyz30ycKe1kRtabyqWpny00L-M-8Lzgo
+####
+GET http://localhost:3000/districts/322
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNocmlzdG9waGVyX3BoaWxsaXBzIiwiaWF0IjoxNjg0MjE2NzA1fQ.GjzeBV3SJJUIYX7kkwA82F7cH7o_E4hg2OTx05tSOcw
+####
+POST http://localhost:3000/districts/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNocmlzdG9waGVyX3BoaWxsaXBzIiwiaWF0IjoxNjg0MzMyNTEyfQ.Yk0x3Ek748tC-GlIo92uxGY4BDBjNr7OuyaZ333ETC8
 Content-Type: application/json
 
 {
-    "id":10,
-    "todo": "Finalize event theme",
-    "priority": "LOW",
-    "status": "TO DO",
-    "category": "HOME",
-    "dueDate": "2021-02-22"
+  "districtName": "Bagalkot",
+  "stateId": 3,
+  "cases": 2323,
+  "cured": 2000,
+  "active": 315,
+  "deaths": 8
 }
 ###
 
-PUT  http://localhost:3000/todos/2/
+DELETE  http://localhost:3000/districts/2/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNocmlzdG9waGVyX3BoaWxsaXBzIiwiaWF0IjoxNjg0MjE2NzA1fQ.GjzeBV3SJJUIYX7kkwA82F7cH7o_E4hg2OTx05tSOcw
+
+###
+
+PUT http://localhost:3000/districts/365/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNocmlzdG9waGVyX3BoaWxsaXBzIiwiaWF0IjoxNjg0MjE2NzA1fQ.GjzeBV3SJJUIYX7kkwA82F7cH7o_E4hg2OTx05tSOcw
 Content-Type: application/json
 
 {
-    "status": "DONE"
+  "districtName": "Nadia",
+  "stateId": 3,
+  "cases": 9628,
+  "cured": 6524,
+  "active": 3000,
+  "deaths": 104
 }
 ###
-PUT  http://localhost:3000/todos/2/
-Content-Type: application/json
 
-{
-    "dueDate": "2021-12-12"
-}
+GET http://localhost:3000/states/36/stats/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNocmlzdG9waGVyX3BoaWxsaXBzIiwiaWF0IjoxNjg0MjE2NzA1fQ.GjzeBV3SJJUIYX7kkwA82F7cH7o_E4hg2OTx05tSOcw
 ###
-
-
-
-
-DELETE http://localhost:3000/todos/2/
